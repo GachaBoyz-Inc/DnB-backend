@@ -1,0 +1,23 @@
+{
+  "name": "dnb-backend",
+  "version": "1.0.0",
+  "description": "Dnd Character sheet management application ",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GachaBoyz-Inc/DnB-backend.git"
+  },
+  "author": "Os Gachaboyz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GachaBoyz-Inc/DnB-backend/issues"
+  },
+  "homepage": "https://github.com/GachaBoyz-Inc/DnB-backend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
