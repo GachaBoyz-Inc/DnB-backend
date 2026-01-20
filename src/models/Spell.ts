@@ -1,6 +1,6 @@
 import Ability from "./Ability";
 import ComponentTypes from "./enums/ComponentTypes"
-import Class from "./Class"
+import ClassNames from "./enums/ClassNames"
 import SpellTypes from "./enums/SpellTypes";
 import AbilityTypes from "./enums/AbilityTypes";
 
@@ -11,10 +11,10 @@ class Spell extends Ability {
     private resistance: string = ''
     private school: string 
     private range: string 
-    private conjurationClass: Class[]
+    private conjurationClass: ClassNames[]
     private spellType: SpellTypes
 
-    constructor(id: number, name: string, description: string, componentTypes: ComponentTypes[], casting_time: string, duration: string, school: string, range: string, conjurationClass: Class[], spellType: SpellTypes) {
+    constructor(id: number, name: string, description: string, componentTypes: ComponentTypes[], casting_time: string, duration: string, school: string, range: string, conjurationClass: ClassNames[], spellType: SpellTypes) {
         super(id, name, description, AbilityTypes.SPELL);
         this.componentTypes = componentTypes;
         this.casting_time = casting_time;
