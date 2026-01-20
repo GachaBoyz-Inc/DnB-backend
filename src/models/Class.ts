@@ -3,15 +3,15 @@ class Class {
     private name: string
     private description: string
     private hpDice: string
-    private proficiency: string
+    private proficiencies: string
     private equipament: string
 
-    constructor(id: number, name: string, description: string, hpDice: string, proeficiency: string, equipament: string) {
+    constructor(id: number, name: string, description: string, hpDice: string, proficiencies: string, equipament: string) {
         this.id = id
         this.name = name
         this.description = description
         this.hpDice = hpDice
-        this.proficiency = proeficiency
+        this.proficiencies = proficiencies
         this.equipament = equipament
     };
     getClassId() {
@@ -26,8 +26,8 @@ class Class {
     getClasshpDice(){
         return this.hpDice
     };
-    getClassProficiency() {
-        return this.proficiency
+    getClassProficiencies() {
+        return this.proficiencies
     };
     getClassEquipament() {
         return this.equipament
@@ -41,8 +41,8 @@ class Class {
     setClasshpDice(hpDice: string){
         this.hpDice = hpDice
     };
-    setClassProficiency(proeficiency: string){
-        this.proficiency = proeficiency 
+    setClassProficiencies(proficiencies: string){
+        this.proficiencies = proficiencies 
     };
     setClassEquipament(equipament: string){
         this.equipament = equipament
