@@ -5,16 +5,16 @@ class Attributes {
     private intelligence: number
     private wisdom: number
     private charisma: number
-    private character_id: number
+    private characterId: number
 
-    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, character_id: number){
+    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, characterId: number){
         this.id = id
         this.strength = strength
         this.dexterity = dexterity
         this.intelligence = intelligence
         this.wisdom = wisdom
         this.charisma = charisma
-        this.character_id = character_id
+        this.characterId = characterId
     };
     getAttributesId() {
         return this.id
@@ -34,8 +34,8 @@ class Attributes {
     getAttributesCharisma() {
         return this.charisma
     };
-    getAttributesCharacter_id() {
-        return this.character_id
+    getAttributesCharacterId() {
+        return this.characterId
     };
     setAttributesStrength(strength: number){
         this.strength = strength
@@ -52,8 +52,8 @@ class Attributes {
     setAttributesCharisma(charisma: number) {
         this.charisma = charisma
     };
-    setAttributesCharacter_id(character_id: number) {
-        this.character_id = character_id
+    setAttributesCharacterId(characterId: number) {
+        this.characterId = characterId
     };
 }
 export default Attributes

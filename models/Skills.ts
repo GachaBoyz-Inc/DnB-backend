@@ -12,16 +12,17 @@ class Skills {
     private intimidation: number = 0
     private insight: number = 0
     private investigation: number = 0
-    private animal_handling: number = 0
+    private animalHandling: number = 0
     private medicine: number = 0
     private nature: number = 0
     private perception: number = 0
     private persuasion: number = 0
-    private sleight_of_hand: number = 0 
+    private sleightOfHand: number = 0 
     private religion: number = 0
     private survival: number = 0
+    private characterSheetId: number
 
-    constructor(id: number, acrobatics: number, arcana: number, athletics: number, perfomance: number, deception: number, stealth: number, history: number, intimidation: number, insight: number, investigation: number, animal_handling: number, medicine: number, nature: number, perception: number, persuasion: number, sleight_of_hand: number, religion: number, survival: number) {
+    constructor(id: number, acrobatics: number, arcana: number, athletics: number, perfomance: number, deception: number, stealth: number, history: number, intimidation: number, insight: number, investigation: number, animalHandling: number, medicine: number, nature: number, perception: number, persuasion: number, sleightOfHand: number, religion: number, survival: number, characterSheetId: number) {
         this.id = id
         this.acrobatics = acrobatics
         this.arcana = arcana
@@ -33,18 +34,23 @@ class Skills {
         this.intimidation = intimidation
         this.insight = insight
         this.investigation = investigation
-        this.animal_handling = animal_handling
+        this.animalHandling = animalHandling
         this.medicine = medicine
         this.nature = nature
         this.perception = perception
         this.persuasion = persuasion
-        this.sleight_of_hand = sleight_of_hand
+        this.sleightOfHand = sleightOfHand
         this.religion = religion
         this.survival = survival
+        this.characterSheetId = characterSheetId
     }
 
     getSkillsId() {
         return this.id 
+    }
+
+    getCharacterSheetId() {
+        return this.characterSheetId
     }
 
     getSkillsAcrobatics() {
@@ -88,7 +94,7 @@ class Skills {
     }
 
     getSkillsAnimalHandling() {
-        return this.animal_handling
+        return this.animalHandling
     }
 
     getSkillsMedicine() {
@@ -108,7 +114,7 @@ class Skills {
     }
 
     getSkillsSleightOfHand() {
-        return this.sleight_of_hand
+        return this.sleightOfHand
     }
 
     getSkillsReligion() {
@@ -160,7 +166,7 @@ class Skills {
     }
 
     setSkillsAnimalHandling(value:number) {
-        this.animal_handling = value
+        this.animalHandling = value
     }
 
     setSkillsMedicine(value:number) {
@@ -180,7 +186,7 @@ class Skills {
     }
 
     setSkillsSleightOfHand(value:number) {
-        this.sleight_of_hand = value
+        this.sleightOfHand = value
     }
 
     setSkillsReligion(value:number) {

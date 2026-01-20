@@ -1,6 +1,6 @@
 class Character {
     private id: number 
-    private sheet_id: number
+    private sheetId: number
     private name: string
     private backstory: string
     private appearance: string
@@ -8,16 +8,16 @@ class Character {
     private objectives: string
     private bonds: string
     private flaws: string
-    private personality_traits: string
-    private race_id: number
-    private class_id: number
-    private background_id: number
-    private player_name: string
+    private personalityTraits: string
+    private raceId: number
+    private classId: number
+    private backgroundId: number
+    private playerName: string
     private level: number
 
-    constructor(id: number, sheet_id:number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personality_traits: string, race_id: number, class_id: number, background_id: number, player_name: string, level: number){
+    constructor(id: number, sheetId:number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, playerName: string, level: number){
         this.id = id
-        this.sheet_id = sheet_id
+        this.sheetId = sheetId
         this.name = name
         this.backstory = backstory
         this.appearance = appearance
@@ -25,19 +25,19 @@ class Character {
         this.objectives = objectives
         this.bonds = bonds
         this.flaws = flaws
-        this.personality_traits = personality_traits
-        this.race_id = race_id
-        this.class_id = class_id
-        this.background_id = background_id
-        this.player_name = player_name
+        this.personalityTraits = personalityTraits
+        this.raceId = raceId
+        this.classId = classId
+        this.backgroundId = backgroundId
+        this.playerName = playerName
         this.level = level  
     }
 
 getCharacterId() {
     return this.id
 };
-getCharacterSheet_id() {
-    return this.sheet_id
+getCharactersheetId() {
+    return this.sheetId
 };
 getCharacterName() {
     return this.name
@@ -60,27 +60,27 @@ getCharacterBonds() {
 getCharacterFlaws() {
     return this.flaws
 };
-getCharacterPersonality_traits() {
-    return this.personality_traits
+getCharacterpersonalityTraits() {
+    return this.personalityTraits
 };
-getCharacterRace_id() {
-    return this.race_id
+getCharacterraceId() {
+    return this.raceId
 };
 getCharacterClass_id() {
-    return this.class_id
+    return this.classId
 };
-getCharaterBackground_id() {
-    return this.background_id
+getCharaterbackgroundId() {
+    return this.backgroundId
 };
-getCharacterPlayer_name() {
-    return this.player_name
+getCharacterplayerName() {
+    return this.playerName
 };
 getCharacterLevel() {
     return this.level
 };
 
-setCharacterSheet_id(sheet_id: number){
-    this.sheet_id = sheet_id
+setCharactersheetId(sheetId: number){
+    this.sheetId = sheetId
 }
 setCharacterName(name: string) {
     this.name = name 
@@ -103,20 +103,20 @@ setCharacterBonds(bonds: string) {
 setCharacterFlaws(flaws: string) {
     this.flaws = flaws 
 };
-setCharacterPersonality_traits(personality_traits: string) {
-    this.personality_traits = personality_traits 
+setCharacterpersonalityTraits(personalityTraits: string) {
+    this.personalityTraits = personalityTraits 
 };
-setCharacterRace_id(race_id: number){
-    this.race_id = race_id
+setCharacterraceId(raceId: number){
+    this.raceId = raceId
 }
-setCharacterClass_id(class_id: number){
-    this.class_id = class_id
+setCharacterClass_id(classId: number){
+    this.classId = classId
 }
-setCharacterBackground_id(background_id: number){
-    this.background_id = background_id
+setCharacterbackgroundId(backgroundId: number){
+    this.backgroundId = backgroundId
 }
-setCharacterPlayer_name(player_name: string) {
-    this.player_name = player_name 
+setCharacterplayerName(playerName: string) {
+    this.playerName = playerName 
 };
 setCharacterLevel(level: number) {
     this.level = level 
