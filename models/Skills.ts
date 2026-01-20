@@ -2,24 +2,46 @@
 
 class Skills {
     private id: number 
-    private acrobatics: number 
-    private arcana: number 
-    private athletics: number 
-    private perfomance: number 
-    private deception: number 
-    private stealth: number 
-    private history: number 
-    private intimidation: number 
-    private insight: number 
-    private investigation: number 
-    private animal_handling: number 
-    private medicine: number 
-    private nature: number 
-    private perception: number 
-    private persuasion: number 
-    private sleight_of_hand: number 
-    private religion: number 
-    private survival: number 
+    private acrobatics: number = 0
+    private arcana: number = 0
+    private athletics: number = 0
+    private perfomance: number = 0
+    private deception: number = 0
+    private stealth: number = 0
+    private history: number = 0
+    private intimidation: number = 0
+    private insight: number = 0
+    private investigation: number = 0
+    private animal_handling: number = 0
+    private medicine: number = 0
+    private nature: number = 0
+    private perception: number = 0
+    private persuasion: number = 0
+    private sleight_of_hand: number = 0 
+    private religion: number = 0
+    private survival: number = 0
+
+    constructor(id: number, acrobatics: number, arcana: number, athletics: number, perfomance: number, deception: number, stealth: number, history: number, intimidation: number, insight: number, investigation: number, animal_handling: number, medicine: number, nature: number, perception: number, persuasion: number, sleight_of_hand: number, religion: number, survival: number) {
+        this.id = id
+        this.acrobatics = acrobatics
+        this.arcana = arcana
+        this.athletics = athletics
+        this.perfomance = perfomance
+        this.deception = deception
+        this.stealth = stealth
+        this.history = history
+        this.intimidation = intimidation
+        this.insight = insight
+        this.investigation = investigation
+        this.animal_handling = animal_handling
+        this.medicine = medicine
+        this.nature = nature
+        this.perception = perception
+        this.persuasion = persuasion
+        this.sleight_of_hand = sleight_of_hand
+        this.religion = religion
+        this.survival = survival
+    }
 
     getSkillsId() {
         return this.id 
