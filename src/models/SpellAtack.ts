@@ -19,3 +19,5 @@ class SpellAttack extends Spell {
         this.damage = damage;
     }
 }
+
+export default SpellAttack 
