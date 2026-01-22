@@ -1,0 +1,7 @@
+CREATE TABLE "race" (
+    "Id" PRIMARY KEY AUTOINCREMENT,
+    "Name" VARCHAR(100) NOT NULL,
+    "Description" VARCHAR(1000) NOT NULL,
+    "Skills" VARCHAR(100) NOT NULL,
+    "Abilities" VARCHAR(600) NOT NULL
+);
