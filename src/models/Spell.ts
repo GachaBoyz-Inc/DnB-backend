@@ -1,8 +1,8 @@
-import Ability from "./Ability";
-import ComponentTypes from "./enums/ComponentTypes"
-import ClassNames from "./enums/ClassNames"
-import SpellTypes from "./enums/SpellTypes";
-import AbilityTypes from "./enums/AbilityTypes";
+import Ability from "./Ability.js";
+import ComponentTypes from "./enums/ComponentTypes.js"
+import ClassNames from "./enums/ClassNames.js"
+import SpellTypes from "./enums/SpellTypes.js";
+import AbilityTypes from "./enums/AbilityTypes.js";
 
 class Spell extends Ability {
     private componentTypes: ComponentTypes[] 

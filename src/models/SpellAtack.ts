@@ -1,7 +1,7 @@
-import Class from "./Class";
-import ComponentTypes from "./enums/ComponentTypes";
-import SpellTypes from "./enums/SpellTypes";
-import Spell from "./Spell";
+import Class from "./Class.js";
+import ComponentTypes from "./enums/ComponentTypes.js";
+import SpellTypes from "./enums/SpellTypes.js";
+import Spell from "./Spell.js";
 
 class SpellAttack extends Spell {
     damage: string;
