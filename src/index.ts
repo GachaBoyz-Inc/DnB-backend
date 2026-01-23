@@ -1,14 +1,16 @@
-import express from 'express';
-import dotenv from 'dotenv';
-
-dotenv.config()
-const app = express()
-const port = 3000
+import dbConnection from "./config/db.js";
+import app from "./server/server.js";
 
 app.get('/', (req, res) => {
-  res.send('Olá Mundo!')
-})
+  try {
+    dbConnection.query("SELECT * FROM usuario", ((err, query) => {
+      if (err) {
+        res.send("Erro ao executar query");
+      }
 
-app.listen(port, () => {
-  console.log(`Exemplo de app rodando em http://localhost:${port}`)
-})
+      res.send(query);
+    }))
+  } catch (e: any) {
+    res.send("Erro ao mostrar algo do banco")
+  }
+});

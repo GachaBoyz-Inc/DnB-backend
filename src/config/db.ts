@@ -1,10 +1,11 @@
 import mysql, { type Connection } from 'mysql2';
 
 const dbConnection: Connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'admin',
-    password: '',
-    database: 'db_teste'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    port: parseInt(process.env.DB_PORT || '3306'),
+    password: process.env.DB_PWD || '',
+    database: process.env.DB_NAME || 'db_teste'
 });
 
 dbConnection.connect((err) => {

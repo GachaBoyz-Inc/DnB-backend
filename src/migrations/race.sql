@@ -1,7 +1,9 @@
-CREATE TABLE "race" (
-    "Id" PRIMARY KEY AUTOINCREMENT,
-    "Name" VARCHAR(100) NOT NULL,
-    "Description" VARCHAR(1000) NOT NULL,
-    "Skills" VARCHAR(100) NOT NULL,
-    "Abilities" VARCHAR(600) NOT NULL
+CREATE TABLE race (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    skills VARCHAR(100) NOT NULL,
+    abilities VARCHAR(600) NOT NULL,
+
+    PRIMARY KEY(id)
 );

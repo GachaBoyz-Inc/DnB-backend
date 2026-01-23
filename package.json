@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "index.ts",
-    "dev": "tsx watch index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.0.10",
-    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }
