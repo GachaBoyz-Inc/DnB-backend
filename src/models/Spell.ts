@@ -14,11 +14,12 @@ class Spell extends Ability {
     private conjurationClass: ClassNames[]
     private spellType: SpellTypes
 
-    constructor(id: number, name: string, description: string, componentTypes: ComponentTypes[], casting_time: string, duration: string, school: string, range: string, conjurationClass: ClassNames[], spellType: SpellTypes) {
+    constructor(id: number, name: string, description: string, componentTypes: ComponentTypes[], casting_time: string, duration: string, resistance:string, school: string, range: string, conjurationClass: ClassNames[], spellType: SpellTypes) {
         super(id, name, description, AbilityTypes.SPELL);
         this.componentTypes = componentTypes;
         this.casting_time = casting_time;
         this.duration = duration;
+        this.resistance
         this.school = school;
         this.range = range;
         this.conjurationClass = conjurationClass;

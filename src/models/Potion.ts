@@ -1,12 +1,12 @@
 import ItemTypes from "./enums/ItemTypes.js";
 import Item from "./Item.js";
 
-class Potions extends Item{
+class Potion extends Item{
     private duration: string
     private potionType: string
 
-    constructor(id: number, name: string, description: string, type: ItemTypes, duration: string, potionType: string){
-        super(id, name, description, type)
+    constructor(id: number, name: string, description: string, duration: string, potionType: string){
+        super(id, name, description, ItemTypes.CONSUMABLE)
         this.duration = duration
         this.potionType = potionType
     };
@@ -24,5 +24,6 @@ class Potions extends Item{
     set potionsPotionType(potionType: string){
         this.potionType = potionType;
     };
-
 };
+
+export default Potion
