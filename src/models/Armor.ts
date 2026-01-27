@@ -2,23 +2,23 @@ import ItemTypes from "./enums/ItemTypes.js";
 import Item from "./Item.js"
 
 class Armor extends Item {
-    private ca: number 
+    private classArmor: number 
     private dex_bonus: boolean 
     private stealth_disavantage: boolean
 
-    constructor(id: number, name: string, description: string, ca: number, dex_bonus: boolean, stealth_disavantage: boolean) {
+    constructor(id: number, name: string, description: string, classArmor: number, dex_bonus: boolean, stealth_disavantage: boolean) {
         super(id, name, description, ItemTypes.ARMOR);
-        this.ca = ca;
+        this.classArmor = classArmor;
         this.dex_bonus = dex_bonus;
         this.stealth_disavantage = stealth_disavantage;
     }
 
     getArmorClass(): number {
-        return this.ca;
+        return this.classArmor;
     }
 
-    setArmorClass(ca: number) {
-        this.ca = ca;
+    setArmorClass(classArmor: number) {
+        this.classArmor = classArmor;
     }
 
     hasDexBonus(): boolean {
