@@ -1,16 +1,8 @@
-import dbConnection from "./config/db.js";
+import userRouter from "./router/UserRouter.js";
 import app from "./server/server.js";
 
-app.get('/', (req, res) => {
-  try {
-    dbConnection.query("SELECT * FROM usuario", ((err, query) => {
-      if (err) {
-        res.send("Erro ao executar query");
-      }
+app.use("/users", userRouter);
 
-      res.send(query);
-    }))
-  } catch (e: any) {
-    res.send("Erro ao mostrar algo do banco")
-  }
+app.get('/', async (req, res) => {
+  res.send('API is running');
 });
