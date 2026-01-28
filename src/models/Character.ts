@@ -11,11 +11,21 @@ class Character {
     private personalityTraits: string
     private raceId: number
     private classId: number
+    private attributesId: number
+    private skillsId: number
+    private userId: number
     private backgroundId: number
     private playerName: string
     private level: number
+    private proficiencyBonus: number
+    private armorClass: number
+    private initiative: number
+    private speed: number
+    private maxHp: number
+    private currentHp: number
+    private tempHp: number
 
-    constructor(id: number, sheetId:number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, playerName: string, level: number){
+    constructor(id: number, sheetId:number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
         this.id = id
         this.sheetId = sheetId
         this.name = name
@@ -28,9 +38,19 @@ class Character {
         this.personalityTraits = personalityTraits
         this.raceId = raceId
         this.classId = classId
+        this.attributesId = attributesId
+        this.skillsId = skillsId
+        this.userId = userId
         this.backgroundId = backgroundId
         this.playerName = playerName
-        this.level = level  
+        this.level = level 
+        this.proficiencyBonus = proficiencyBonus
+        this.armorClass = armorClass
+        this.initiative = initiative
+        this.speed = speed 
+        this.maxHp = maxHp
+        this.currentHp = currentHp
+        this.tempHp = tempHp
     }
 
 getCharacterId() {
@@ -66,11 +86,20 @@ getCharacterpersonalityTraits() {
 getCharacterraceId() {
     return this.raceId
 };
-getCharacterClass_id() {
+getCharacterClassId() {
     return this.classId
 };
 getCharaterbackgroundId() {
     return this.backgroundId
+};
+getCharacterAttributesId() {
+    return this.attributesId
+};
+getCharacterSkillsId() {
+    return this.skillsId
+};
+getCharacterUserId() {
+    return this.userId
 };
 getCharacterplayerName() {
     return this.playerName
@@ -78,10 +107,30 @@ getCharacterplayerName() {
 getCharacterLevel() {
     return this.level
 };
-
-setCharactersheetId(sheetId: number){
+getCharacterProficiencyBonus() {
+    return this.proficiencyBonus
+};
+getCharacterArmorClass() {
+    return this.armorClass
+};
+getCharacterInitiative() {
+    return this.initiative
+};
+getCharacterSpeed() {
+    return this.speed
+};
+getCharacterMaxHp() {
+    return this.maxHp
+};
+getCharacterCurrentHp() {
+    return this.currentHp
+};
+getCharacterTempHp() {
+    return this.tempHp
+};
+setCharactersheetId(sheetId: number) {
     this.sheetId = sheetId
-}
+};
 setCharacterName(name: string) {
     this.name = name 
 };
@@ -106,20 +155,47 @@ setCharacterFlaws(flaws: string) {
 setCharacterpersonalityTraits(personalityTraits: string) {
     this.personalityTraits = personalityTraits 
 };
-setCharacterraceId(raceId: number){
+setCharacterraceId(raceId: number) { 
     this.raceId = raceId
-}
-setCharacterClass_id(classId: number){
+};
+setCharacterClassId(classId: number) {
     this.classId = classId
-}
-setCharacterbackgroundId(backgroundId: number){
+};
+setCharacterbackgroundId(backgroundId: number) {
     this.backgroundId = backgroundId
-}
+};
+setCharacterAttributesId(attributesId: number) {
+    this.attributesId = attributesId
+};
+setCharacterSkillsId(skillsId: number) {
+    this.skillsId = skillsId
+};
 setCharacterplayerName(playerName: string) {
     this.playerName = playerName 
 };
 setCharacterLevel(level: number) {
     this.level = level 
+};
+setProficiencyBonus(proficiencyBonus: number) {
+    this.proficiencyBonus = proficiencyBonus
+};
+setArmorClass(armorClass: number) {
+    this.armorClass = armorClass
+};
+setInitiative(initiative: number) {
+    this.initiative = initiative
+};
+setSpeed(speed: number) {
+    this.speed = speed
+};
+setMaxHp(maxHp: number) {
+    this.maxHp = maxHp
+};
+setCurrentHp(currentHp: number) {
+    this.currentHp = currentHp
+};
+setTempHp(tempHp: number) {
+    this.tempHp = tempHp
 };
 }
 

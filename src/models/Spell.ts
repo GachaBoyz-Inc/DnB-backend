@@ -1,10 +1,11 @@
-import Ability from "./Ability.js";
 import ComponentTypes from "./enums/ComponentTypes.js"
 import ClassNames from "./enums/ClassNames.js"
 import SpellTypes from "./enums/SpellTypes.js";
-import AbilityTypes from "./enums/AbilityTypes.js";
 
-class Spell extends Ability {
+class Spell {
+    private id: number
+    private name: string
+    private description: string
     private componentTypes: ComponentTypes[] 
     private casting_time: string 
     private duration: string
@@ -15,7 +16,9 @@ class Spell extends Ability {
     private spellType: SpellTypes
 
     constructor(id: number, name: string, description: string, componentTypes: ComponentTypes[], casting_time: string, duration: string, resistance:string, school: string, range: string, conjurationClass: ClassNames[], spellType: SpellTypes) {
-        super(id, name, description, AbilityTypes.SPELL);
+        this.id = id
+        this.name = name
+        this.description = description
         this.componentTypes = componentTypes;
         this.casting_time = casting_time;
         this.duration = duration;
@@ -24,6 +27,17 @@ class Spell extends Ability {
         this.range = range;
         this.conjurationClass = conjurationClass;
         this.spellType = spellType;
+    }
+    getId() {
+        return this.id;
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    getDescription() {
+        return this.description;
     }
 
     getComponentTypes() {
@@ -56,6 +70,14 @@ class Spell extends Ability {
 
     getSpellType() {
         return this.spellType;
+    }
+
+    setName(name: string) {
+        this.name = name;
+    }
+
+    setDescription(description: string) {
+        this.description = description;
     }
 
     setResistance(resistance: string) {
