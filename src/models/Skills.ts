@@ -20,9 +20,8 @@ class Skills {
     private sleightOfHand: number = 0 
     private religion: number = 0
     private survival: number = 0
-    private characterSheetId: number
 
-    constructor(id: number, acrobatics: number, arcana: number, athletics: number, perfomance: number, deception: number, stealth: number, history: number, intimidation: number, insight: number, investigation: number, animalHandling: number, medicine: number, nature: number, perception: number, persuasion: number, sleightOfHand: number, religion: number, survival: number, characterSheetId: number) {
+    constructor(id: number, acrobatics: number, arcana: number, athletics: number, perfomance: number, deception: number, stealth: number, history: number, intimidation: number, insight: number, investigation: number, animalHandling: number, medicine: number, nature: number, perception: number, persuasion: number, sleightOfHand: number, religion: number, survival: number) {
         this.id = id
         this.acrobatics = acrobatics
         this.arcana = arcana
@@ -42,15 +41,10 @@ class Skills {
         this.sleightOfHand = sleightOfHand
         this.religion = religion
         this.survival = survival
-        this.characterSheetId = characterSheetId
     }
 
     getSkillsId() {
         return this.id 
-    }
-
-    getCharacterSheetId() {
-        return this.characterSheetId
     }
 
     getSkillsAcrobatics() {
