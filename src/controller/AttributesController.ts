@@ -2,39 +2,39 @@ import AttributesService from "../service/AttributesService.js";
 import type { Response, Request } from "express";
 
 class AttributesController {
-  private AttributesService: AttributesService;
+  private attributesService: AttributesService;
 
   constructor() {
-    this.AttributesService = new AttributesService();
+    this.attributesService = new AttributesService();
   }
 
   async getAllAttributes(req: Request, res: Response) {
-    const data = await this.AttributesService.getAllAttributes();
+    const data = await this.attributesService.getAllAttributes();
     res.status(data.status).json(data);
   }
 
   async getAttributesById(req: Request, res: Response) {
     const id = Number(req.params.id);
-    const data = await this.AttributesService.getAttributesById(id);
+    const data = await this.attributesService.getAttributesById(id);
     res.status(data.status).json(data);
   }
 
   async create(req: Request, res: Response) {
     const body = req.body;
-    const data = await this.AttributesService.create(body);
+    const data = await this.attributesService.create(body);
     res.status(data.status).json(data);
   }
 
   async update(req: Request, res: Response) {
     const id = Number(req.params.id);
     const body = req.body;
-    const data = await this.AttributesService.update(id, body);
+    const data = await this.attributesService.update(id, body);
     res.status(data.status).json(data);
   }
 
   async delete(req: Request, res: Response) {
     const id = Number(req.params.id);
-    const data = await this.AttributesService.delete(id);
+    const data = await this.attributesService.delete(id);
     res.status(data.status).json(data);
   }
 

@@ -3,7 +3,7 @@ import Attributes from "../models/Attributes"
 
 class AttributesRepository extends AbstractRepository<Attributes> {
     protected transformRowToEntity(row: any): Attributes {
-        return new Attributes(row.id, row.strength, row.dexterity, row.constitution, row.intelligence, row.wisdom, row.charisma);
+        return new Attributes(row.id, row.strength, row.dexterity, row.intelligence, row.wisdom, row.charisma, row.characterId);
     }
 
     constructor () {
