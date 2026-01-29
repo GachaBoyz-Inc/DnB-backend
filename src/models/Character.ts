@@ -1,6 +1,5 @@
 class Character {
     private id: number 
-    private sheetId: number
     private name: string
     private backstory: string
     private appearance: string
@@ -25,9 +24,8 @@ class Character {
     private currentHp: number
     private tempHp: number
 
-    constructor(id: number, sheetId:number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
+    constructor(id: number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
         this.id = id
-        this.sheetId = sheetId
         this.name = name
         this.backstory = backstory
         this.appearance = appearance
@@ -56,9 +54,7 @@ class Character {
 getCharacterId() {
     return this.id
 };
-getCharactersheetId() {
-    return this.sheetId
-};
+
 getCharacterName() {
     return this.name
 };
@@ -128,9 +124,7 @@ getCharacterCurrentHp() {
 getCharacterTempHp() {
     return this.tempHp
 };
-setCharactersheetId(sheetId: number) {
-    this.sheetId = sheetId
-};
+
 setCharacterName(name: string) {
     this.name = name 
 };

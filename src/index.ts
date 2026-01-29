@@ -1,5 +1,6 @@
 import backgroundRouter from "./router/BackgroundRouter.js";
 import userRouter from "./router/UserRouter.js";
+import characterRouter from "./router/CharacterRouter.js"
 import app from "./server/server.js";
 
 app.use("/users", userRouter);
