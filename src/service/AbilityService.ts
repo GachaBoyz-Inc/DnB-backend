@@ -3,67 +3,67 @@ import AbilityRepository from "../repository/Ability.Repository.js";
 import type ResponseUtil from "../util/ResponseUtil.js";
 
 class AbilityService {
-  private AbilityRepository: AbilityRepository = new AbilityRepository();
+  private abilityRepository: AbilityRepository = new AbilityRepository();
 
   async getAllAbility(): Promise<ResponseUtil<Ability[]>> {
     try {
-      const Abilities = await this.AbilityRepository.findAll();
-      return { data: Abilities, status: 200 };
+      const abilities = await this.abilityRepository.findAll();
+      return { data: abilities, status: 200 };
     } catch (error) {
-      return { status: 500, message: "Erro interno do servidor" };
+      return { status: 500, message: "Erro interno do servidor: " + error };
     }
   }
 
   async getAbilityById(id: number): Promise<ResponseUtil<Ability[]>> {
     try {
-      const Ability = await this.AbilityRepository.findById(id);
+      const ability = await this.abilityRepository.findById(id);
 
-      if (Ability.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+      if (ability.length === 0) {
+        return { status: 404, message: "Habilidade não encontrada." };
       }
 
-      return { data: Ability, status: 200 };
+      return { data: ability, status: 200 };
     } catch (error) {
-      return { status: 500, message: "Erro interno do servidor" };
+      return { status: 500, message: "Erro interno do servidor: " + error };
     }
   }
 
   async create(data: Ability): Promise<ResponseUtil<null>> {
     try {
-      await this.AbilityRepository.create(data);
-      return { status: 200, message: "Usuário criado com sucesso" };
+      await this.abilityRepository.create(data);
+      return { status: 200, message: "Habilidade criada com sucesso" };
     } catch (error) {
-      return { status: 500, message: "Erro interno do servidor" };
+      return { status: 500, message: "Erro interno do servidor: " + error };
     }
   }
 
   async update(id: number, data: Partial<Ability>): Promise<ResponseUtil<null>> {
     try {
-      const Ability = await this.AbilityRepository.findById(id);
+      const ability = await this.abilityRepository.findById(id);
 
-      if (Ability.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+      if (ability.length === 0) {
+        return { status: 404, message: "Habilidade não encontrada." };
       }
 
-      await this.AbilityRepository.update(id, data);
-      return { status: 200, message: "Usuário atualizado com sucesso" };
+      await this.abilityRepository.update(id, data);
+      return { status: 200, message: "Habilidade atualizada com sucesso." };
     } catch (error) {
-      return { status: 500, message: "Erro interno do servidor" };
+      return { status: 500, message: "Erro interno do servidor: " + error };
     }
   }
 
   async delete(id: number): Promise<ResponseUtil<null>> {
     try {
-      const Ability = await this.AbilityRepository.findById(id);
+      const ability = await this.abilityRepository.findById(id);
 
-      if (Ability.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+      if (ability.length === 0) {
+        return { status: 404, message: "Habilidade não encontrada." };
       }
 
-      await this.AbilityRepository.delete(id);
-      return { status: 200, message: "Usuário deletado com sucesso" };
+      await this.abilityRepository.delete(id);
+      return { status: 200, message: "Habilidade deletada com sucesso." };
     } catch (error) {
-      return { status: 500, message: "Erro interno do servidor" };
+      return { status: 500, message: "Erro interno do servidor: " + error };
     }
   }
 

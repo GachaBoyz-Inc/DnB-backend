@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS class (
     skills varchar(1000) NOT NULL,
     equipment varchar(600) NOT NULL,
 
-    PRIMARY KEY (id);
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS race (
@@ -52,22 +52,26 @@ CREATE TABLE IF NOT EXISTS spell (
     id int not null  AUTO_INCREMENT,
     name VARCHAR(100) not null,
     description varchar(1000) not null,
-    componetTypes ("Verbal", "Somatical", "Material"),
+    componetTypes enum("Verbal", "Somatical", "Material"),
     castingTime VARCHAR(60) not null,
     duration VARCHAR(60) not null,
-    range VARCHAR(50) not null,
-    conjurationClass enum ("WIZARD", "FIGHTER", "ROGUE", "CLERIC", "RANGER", "BARD", "WARLOCK", "DRUID", "BARBARIAN", "PALADIN", "SORCERER", "MONK", "ARTIFICER")
+    distance VARCHAR(50) not null,
+    conjurationClass enum ("WIZARD", "FIGHTER", "ROGUE", "CLERIC", "RANGER", "BARD", "WARLOCK", "DRUID", "BARBARIAN", "PALADIN", "SORCERER", "MONK", "ARTIFICER"),
     spellType enum("EVOCATION", "CONJURATION", "DIVINATION", "ENCHANTMENT", "ILLUSION", "NECROMANCY", "TRANSMUTATION"),
     resistance VARCHAR(24) not null,
     school VARCHAR(24) not null,
 
-    PRIMARY KEY (id);
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS characters (
     id INT NOT NULL AUTO_INCREMENT,
-    sheetId int NOT NULL,
-    name varchar(200) NOT NULL ,
+    user_id int NOT NULL,
+    skillsId int not null, 
+    attributesId int not null,
+    raceId int NOT NULL,
+    classId int NOT NULL,
+    name varchar(200) NOT NULL,
     backstory varchar(2000) NOT NULL,
     appearance varchar(500) NOT NULL,
     ideals varchar(500) NOT NULL,
@@ -75,8 +79,6 @@ CREATE TABLE IF NOT EXISTS characters (
     bonds varchar(500) NOT NULL, 
     flaws varchar(500) NOT NULL,
     personalityTraits varchar(500) NOT NULL,
-    raceId int NOT NULL,
-    classId int NOT NULL,
     backgroundId int NOT NULL,
     playerName varchar(100) NOT NULL,
 
@@ -87,23 +89,10 @@ CREATE TABLE IF NOT EXISTS characters (
     maxHp int not null,
     currentHp int not null,
     tempHp int not null,
-
-    skillsId int not null, 
-    attributesId int not null,
-
     notes TEXT, 
-
-    user_id int NOT NULL,
     level int NOT NULL,
 
     primary key (id)
-    foreign key (sheetId) references characterSheet(id)
-    foreign key (raceId) references race(id)
-    foreign key (classId) references class(id)
-    foreign key (backgroundId) references background(id)
-    foreign key (user_id) references user(id)
-    foreign key (skillsId) references skills(id)
-    foreign key (attributesId) references attributes(id)
 );
 
 CREATE TABLE IF NOT EXISTS skills (
@@ -126,10 +115,9 @@ CREATE TABLE IF NOT EXISTS skills (
     sleightOfHand INT NOT NULL DEFAULT 0, 
     religion INT NOT NULL DEFAULT 0,
     survival INT NOT NULL DEFAULT 0,
-    characterSheetId INT NOT NULL,
     characterId INT NOT NULL,
-    PRIMARY KEY (id) REFERENCES characterSheet(id),
-    FOREIGN KEY (characterId) REFERENCES character(id)
+    
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS attributes (
@@ -140,9 +128,8 @@ CREATE TABLE IF NOT EXISTS attributes (
     intelligence INT NOT NULL DEFAULT 0,
     wisdom INT NOT NULL DEFAULT 0,
     charisma INT NOT NULL DEFAULT 0,
-    characterSheetId INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (characterSheetId) REFERENCES characterSheet(id)
+    
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS item (
@@ -195,22 +182,48 @@ CREATE TABLE IF NOT EXISTS weapon (
 );
 */
 
-create TABLE IF NOT EXISTS character_sheet_items (
+create TABLE IF NOT EXISTS character_items (
     id INT NOT NULL AUTO_INCREMENT,
-    characterSheetId INT NOT NULL,
+    characterId INT NOT NULL,
     itemId INT NOT NULL,
+    
+    PRIMARY KEY (id)
 );
 
-create TABLE IF NOT EXISTS character_sheet_abilities (
+create TABLE IF NOT EXISTS character_abilities (
     id INT NOT NULL AUTO_INCREMENT,
-    characterSheetId INT NOT NULL,
+    characterId INT NOT NULL,
     abilityId INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (characterSheetId) REFERENCES characterSheet(id),
-    FOREIGN KEY (abilityId) REFERENCES ability(id)
+    
+    PRIMARY KEY (id)
 );
 
+ALTER TABLE characters
+  ADD CONSTRAINT fk_characters_race
+    FOREIGN KEY (raceId) REFERENCES race(id),
+  ADD CONSTRAINT fk_characters_class
+    FOREIGN KEY (classId) REFERENCES class(id),
+  ADD CONSTRAINT fk_characters_background
+    FOREIGN KEY (backgroundId) REFERENCES background(id),
+  ADD CONSTRAINT fk_characters_user
+    FOREIGN KEY (user_id) REFERENCES users(id),
+  ADD CONSTRAINT fk_characters_skills
+    FOREIGN KEY (skillsId) REFERENCES skills(id),
+  ADD CONSTRAINT fk_characters_attributes
+    FOREIGN KEY (attributesId) REFERENCES attributes(id);
 
+ALTER TABLE skills
+  ADD CONSTRAINT fk_skills_character
+    FOREIGN KEY (characterId) REFERENCES characters(id);
 
+ALTER TABLE character_items
+  ADD CONSTRAINT fk_character_items_characterId_characters
+    FOREIGN KEY (characterId) REFERENCES characters(id),
+  ADD CONSTRAINT fk_character_items_itemId_item
+    FOREIGN KEY (itemId) REFERENCES item(id);
 
-
+ALTER TABLE character_abilities
+  ADD CONSTRAINT fk_character_abilities_characterSheetId_characters
+    FOREIGN KEY (characterId) REFERENCES characters(id),
+  ADD CONSTRAINT fk_character_abilities_abilityId_ability
+    FOREIGN KEY (abilityId) REFERENCES ability(id);

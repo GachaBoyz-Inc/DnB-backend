@@ -2,39 +2,39 @@ import AbilityService from "../service/AbilityService.js";
 import type { Response, Request } from "express";
 
 class AbilityController {
-  private AbilityService: AbilityService;
+  private abilityService: AbilityService;
 
   constructor() {
-    this.AbilityService = new AbilityService();
+    this.abilityService = new AbilityService();
   }
 
   async getAllAbility(req: Request, res: Response) {
-    const data = await this.AbilityService.getAllAbility();
+    const data = await this.abilityService.getAllAbility();
     res.status(data.status).json(data);
   }
 
   async getAbilityById(req: Request, res: Response) {
     const id = Number(req.params.id);
-    const data = await this.AbilityService.getAbilityById(id);
+    const data = await this.abilityService.getAbilityById(id);
     res.status(data.status).json(data);
   }
 
   async create(req: Request, res: Response) {
     const body = req.body;
-    const data = await this.AbilityService.create(body);
+    const data = await this.abilityService.create(body);
     res.status(data.status).json(data);
   }
 
   async update(req: Request, res: Response) {
     const id = Number(req.params.id);
     const body = req.body;
-    const data = await this.AbilityService.update(id, body);
+    const data = await this.abilityService.update(id, body);
     res.status(data.status).json(data);
   }
 
   async delete(req: Request, res: Response) {
     const id = Number(req.params.id);
-    const data = await this.AbilityService.delete(id);
+    const data = await this.abilityService.delete(id);
     res.status(data.status).json(data);
   }
 
