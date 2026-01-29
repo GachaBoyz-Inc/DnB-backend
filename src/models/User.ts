@@ -1,10 +1,10 @@
 class User {
-    private id: number 
+    private id: number | null
     private name: string
     private password: string 
     private email: string
 
-    constructor(id: number, name: string, password: string, email: string) {
+    constructor(id: number | null, name: string, password: string, email: string) {
         this.id = id
         this.name = name
         this.password = password
@@ -21,6 +21,10 @@ class User {
 
     getUserPassword() {
         return this.password
+    }
+
+    setUserPassword(password: string) {
+        this.password = password
     }
 
     getUserEmail() {

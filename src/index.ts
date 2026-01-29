@@ -4,6 +4,7 @@ import characterRouter from "./router/CharacterRouter.js"
 import attributesRouter from "./router/AttributesRouter.js"
 import racesRouter from "./router/RaceRouter.js"
 import classesRouter from "./router/ClassRouter.js"
+import authRouter from "./router/AuthRouter.js"
 import app from "./server/server.js";
 
 app.use("/users", userRouter);
@@ -12,6 +13,7 @@ app.use("/races", racesRouter)
 app.use("/characters", characterRouter)
 app.use("/attributes", attributesRouter)
 app.use("/classes", classesRouter)
+app.use("/auth", authRouter)
 
 app.get('/', async (req, res) => {
   res.send('API is running');

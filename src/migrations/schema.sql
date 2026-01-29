@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS spell (
     PRIMARY KEY (id);
 );
 
-CREATE TABLE IF NOT EXISTS character (
+CREATE TABLE IF NOT EXISTS characters (
     id INT NOT NULL AUTO_INCREMENT,
     sheetId int NOT NULL,
     name varchar(200) NOT NULL ,
