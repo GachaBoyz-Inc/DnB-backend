@@ -141,47 +141,6 @@ CREATE TABLE IF NOT EXISTS item (
     PRIMARY KEY (id)
 );
 
-/*
-CREATE TABLE IF NOT EXISTS armor (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    description VARCHAR(1000) NOT NULL,
-    type ENUM('Weapon', 'Armor', 'Potion', 'Equipment', 'Consumable', 'Tool', 'Junk', 'Misc') DEFAULT ('Armor') NOT NULL,
-    armorClass INT NOT NULL,
-    stealthDisadvantage BOOLEAN NOT NULL,
-    item_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (item_id) REFERENCES item(id)
-);
-*/
-
-/*
-CREATE TABLE IF NOT EXISTS defense_equipment (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    description VARCHAR(1000) NOT NULL,
-    type ENUM('Weapon', 'Armor', 'Potion', 'Equipment', 'Consumable', 'Tool', 'Junk', 'Misc') DEFAULT ('Equipment')NOT NULL,
-    armorClassBonus INT NOT NULL,
-    item_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (item_id) REFERENCES item(id)
-);
-*/
-
-/*
-CREATE TABLE IF NOT EXISTS weapon (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    description VARCHAR(1000) NOT NULL,
-    type ENUM('Weapon', 'Armor', 'Potion', 'Equipment', 'Consumable', 'Tool', 'Junk', 'Misc') DEFAULT ('Weapon') NOT NULL,
-    damage VARCHAR(50) NOT NULL
-    range VARCHAR(50) NOT NULL,
-    item_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (item_id) REFERENCES item(id)
-);
-*/
-
 create TABLE IF NOT EXISTS character_items (
     id INT NOT NULL AUTO_INCREMENT,
     characterId INT NOT NULL,
