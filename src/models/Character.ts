@@ -8,6 +8,7 @@ class Character {
     private bonds: string
     private flaws: string
     private personalityTraits: string
+    private alignment: string
     private raceId: number
     private classId: number
     private attributesId: number
@@ -24,7 +25,7 @@ class Character {
     private currentHp: number
     private tempHp: number
 
-    constructor(id: number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
+    constructor(id: number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, alignment:string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
         this.id = id
         this.name = name
         this.backstory = backstory
@@ -34,6 +35,7 @@ class Character {
         this.bonds = bonds
         this.flaws = flaws
         this.personalityTraits = personalityTraits
+        this.alignment = alignment
         this.raceId = raceId
         this.classId = classId
         this.attributesId = attributesId
@@ -79,6 +81,11 @@ getCharacterFlaws() {
 getCharacterpersonalityTraits() {
     return this.personalityTraits
 };
+
+getCharacterAlignment() {
+    return this.alignment
+};
+
 getCharacterraceId() {
     return this.raceId
 };
@@ -149,6 +156,11 @@ setCharacterFlaws(flaws: string) {
 setCharacterpersonalityTraits(personalityTraits: string) {
     this.personalityTraits = personalityTraits 
 };
+
+setCharacterAlignment(alignment: string) {
+    this.alignment = alignment
+};
+
 setCharacterraceId(raceId: number) { 
     this.raceId = raceId
 };
