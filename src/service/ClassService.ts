@@ -10,6 +10,7 @@ class ClassService{
         const classes = await this.classRepository.findAll();
         return { data: classes, status: 200 };
     } catch (error) {
+        console.log(error)
         return { status: 500, message: "Erro interno do servidor" };
     }
  }
