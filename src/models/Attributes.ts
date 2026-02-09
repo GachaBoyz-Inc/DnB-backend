@@ -5,15 +5,17 @@ class Attributes {
     private intelligence: number
     private wisdom: number
     private charisma: number
+    private constitution: number
     private characterId: number
 
-    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, characterId: number){
+    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, constitution: number, characterId: number){
         this.id = id
         this.strength = strength
         this.dexterity = dexterity
         this.intelligence = intelligence
         this.wisdom = wisdom
         this.charisma = charisma
+        this.constitution = constitution
         this.characterId = characterId
     };
     getAttributesId() {
@@ -33,6 +35,9 @@ class Attributes {
     };
     getAttributesCharisma() {
         return this.charisma
+    };
+    getAttributesConstitution() {
+        return this.constitution
     };
     getAttributesCharacterId() {
         return this.characterId

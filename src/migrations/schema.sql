@@ -128,6 +128,7 @@ CREATE TABLE IF NOT EXISTS attributes (
     intelligence INT NOT NULL DEFAULT 0,
     wisdom INT NOT NULL DEFAULT 0,
     charisma INT NOT NULL DEFAULT 0,
+    constitution INT NOT NULL DEFAULT 0,
     
     PRIMARY KEY (id)
 );
