@@ -3,7 +3,7 @@ import SavingThrows from "../models/SavingThrows"
 
 class SavingThrowsRepository extends AbstractRepository<SavingThrows> {
     protected transformRowToEntity(row: any): SavingThrows {
-        return new SavingThrows(row.id, row.strength, row.dexterity, row.intelligence, row.wisdom, row.charisma, row.characterId);
+        return new SavingThrows(row.id, row.strength, row.dexterity, row.intelligence, row.wisdom, row.charisma, row.constitution, row.characterId);
     }
 
     constructor () {

@@ -133,6 +133,19 @@ CREATE TABLE IF NOT EXISTS attributes (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE IF NOT EXISTS savingThrows (
+    id INT NOT NULL AUTO_INCREMENT,
+    strength INT NOT NULL DEFAULT 0,
+    dexterity INT NOT NULL DEFAULT 0,
+    constitution INT NOT NULL DEFAULT 0,
+    intelligence INT NOT NULL DEFAULT 0,
+    wisdom INT NOT NULL DEFAULT 0,
+    charisma INT NOT NULL DEFAULT 0,
+    constitution INT NOT NULL DEFAULT 0,
+    
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE IF NOT EXISTS item (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,

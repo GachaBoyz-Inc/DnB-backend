@@ -5,15 +5,17 @@ class SavingThrows {
     private intelligence: number
     private wisdom: number
     private charisma: number
+    private constitution: number
     private characterId: number
 
-    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, characterId: number){
+    constructor (id: number, strength: number, dexterity: number, intelligence: number, wisdom: number, charisma: number, constitution: number, characterId: number){
         this.id = id
         this.strength = strength
         this.dexterity = dexterity
         this.intelligence = intelligence
         this.wisdom = wisdom
         this.charisma = charisma
+        this.constitution = constitution
         this.characterId = characterId
     };
     getSavingThrowsId() {
@@ -34,6 +36,9 @@ class SavingThrows {
     getSavingThrowsCharisma() {
         return this.charisma
     };
+    getSavingThrowsConstitution(){
+        return this.constitution
+    };
     getSavingThrowsCharacterId() {
         return this.characterId
     };
@@ -51,6 +56,9 @@ class SavingThrows {
     };
     setSavingThrowsCharisma(charisma: number) {
         this.charisma = charisma
+    };
+    setSavingThrowsConstitution(constitution: number){
+        this.constitution = constitution
     };
     setSavingThrowsCharacterId(characterId: number) {
         this.characterId = characterId
