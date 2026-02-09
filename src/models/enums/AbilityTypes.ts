@@ -1,8 +1,8 @@
 enum AbilityTypes {
     RACIAL = "Racial",
-    CLASS_ABILITY = "Class Ability",
-    FEAT = "Feat",
-    SPELL = "Spell"
+    CLASS_ABILITY = "Habilidade de classe",
+    FEAT = "Talento",
+    SPELL = "Feitiço"
 }
 
 export default AbilityTypes
