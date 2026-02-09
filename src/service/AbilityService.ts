@@ -1,5 +1,5 @@
 import type Ability from "../models/Ability.js";
-import AbilityRepository from "../repository/Ability.Repository.js";
+import AbilityRepository from "../repository/AbilityRepository.js";
 import type ResponseUtil from "../util/ResponseUtil.js";
 
 class AbilityService {
