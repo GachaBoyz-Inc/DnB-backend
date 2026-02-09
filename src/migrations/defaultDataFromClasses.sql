@@ -1,7 +1,3 @@
-/*
-Classes pré-existences
-*/
-
 INSERT INTO class (name, description, hpDice, proficiencies, skills, equipment) 
 
 VALUES 
