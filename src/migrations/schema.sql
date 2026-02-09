@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS ability (
     id int unique not null AUTO_INCREMENT,
     name VARCHAR(100) not null,
     description VARCHAR(100) not null,
-    type enum("Racial","Class Ability","Feat","Spell"),
+    type enum("Racial","Class Ability","Feat"),
 
     PRIMARY KEY (id)
 );
