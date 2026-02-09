@@ -4,7 +4,7 @@ import Spell from "../models/Spell"
 
 class SpellRepository extends AbstractRepository<Spell> {
     constructor() {
-        super("spells")
+        super("spell")
     }
 }
 export default SpellRepository

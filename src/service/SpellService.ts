@@ -10,6 +10,7 @@ class SpellService {
             const spells = await this.spellRepository.findAll()
             return {data: spells, status:200}
         } catch (error) {
+            console.log(error)
             return {status: 500, message: "Um erro interno aconteceu no servidor"}
         }
     }
@@ -33,6 +34,7 @@ class SpellService {
             await this.spellRepository.create(data) 
             return {status: 200, message: "Feitiço criado com sucesso!"}
         } catch(error) {
+            console.log(error)
             return {status: 500, message: "Um erro interno ocorreu no servidor"}
         }
     }

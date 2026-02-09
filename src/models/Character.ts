@@ -13,6 +13,7 @@ class Character {
     private classId: number
     private attributesId: number
     private skillsId: number
+    private savingThrowsId: number
     private userId: number
     private backgroundId: number
     private playerName: string
@@ -25,7 +26,7 @@ class Character {
     private currentHp: number
     private tempHp: number
 
-    constructor(id: number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, alignment:string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
+    constructor(id: number, name: string, backstory: string, appearance: string, ideals: string, objectives: string, bonds: string, flaws: string, personalityTraits: string, alignment:string, raceId: number, classId: number, backgroundId: number, attributesId: number, skillsId: number, savingThrowsId:number, userId: number, playerName: string, level: number, proficiencyBonus: number, armorClass: number, initiative: number, speed: number, maxHp: number, currentHp: number, tempHp: number){
         this.id = id
         this.name = name
         this.backstory = backstory
@@ -40,6 +41,7 @@ class Character {
         this.classId = classId
         this.attributesId = attributesId
         this.skillsId = skillsId
+        this.savingThrowsId = savingThrowsId
         this.userId = userId
         this.backgroundId = backgroundId
         this.playerName = playerName
@@ -101,6 +103,10 @@ getCharacterAttributesId() {
 getCharacterSkillsId() {
     return this.skillsId
 };
+
+getCharacterSavingThrowsId() {
+    return this.savingThrowsId
+}
 getCharacterUserId() {
     return this.userId
 };
@@ -176,6 +182,10 @@ setCharacterAttributesId(attributesId: number) {
 setCharacterSkillsId(skillsId: number) {
     this.skillsId = skillsId
 };
+setCharacterSavingThrowsId(savingThrowsId:number) {
+    this.savingThrowsId = savingThrowsId
+}
+
 setCharacterplayerName(playerName: string) {
     this.playerName = playerName 
 };

@@ -3,14 +3,14 @@ class Race {
     private name: string
     private description: string
     private skills: string
-    private ability: string
+    private abilities: string
 
-    constructor(id: number, name: string, description: string, skills: string, ability: string){
+    constructor(id: number, name: string, description: string, skills: string, abilities: string){
         this.id = id
         this.name = name
         this.description = description
         this.skills = skills
-        this.ability = ability
+        this.abilities = abilities
     };
 
     getRaceId() {
@@ -25,8 +25,8 @@ class Race {
     getRaceSkills() {
         return this.skills
     };
-    getRaceAbility() {
-        return this.ability
+    getRaceAbilities() {
+        return this.abilities
     };
     setRaceName(name: string) {
         this.name = name
@@ -37,8 +37,8 @@ class Race {
     setRaceSkills(skills: string) {
         this.skills = skills
     };
-    setRaceAbility(ability: string) {
-        this.ability = ability
+    setRaceAbilities(abilities: string) {
+        this.abilities = abilities
     };
 };
 

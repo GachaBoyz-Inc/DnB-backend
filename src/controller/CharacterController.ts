@@ -10,7 +10,8 @@ class CharacterController {
     }
 
     async getAllYourCharacters(req: Request, res: Response) {
-        const user_id = Number(req.params.user_id) 
+        console.log("Chegou no controller")
+        const user_id = Number(req.params.id) 
         const characters = await this.characterService.getAllYourCharacters(user_id)
         res.status(characters.status).json(characters)
     }

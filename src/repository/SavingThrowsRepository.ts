@@ -7,7 +7,7 @@ class SavingThrowsRepository extends AbstractRepository<SavingThrows> {
     }
 
     constructor () {
-        super("SavingThrows")
+        super("savingThrows")
     };
 };
 

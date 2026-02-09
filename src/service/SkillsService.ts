@@ -33,6 +33,7 @@ class SkillsService {
       await this.skillsRepository.create(data);
       return { status: 200, message: "Perícias criadas com sucesso" };
     } catch (error) {
+      console.log(error)
       return { status: 500, message: "Erro interno do servidor" };
     }
   }

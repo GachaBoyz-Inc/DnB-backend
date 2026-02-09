@@ -57,7 +57,7 @@ class BackgroundService {
       const background = await this.BackgroundRepository.findById(id);
 
       if (background.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+        return { status: 404, message: "Antecedente não encontrado" };
       }
 
       await this.BackgroundRepository.delete(id);

@@ -10,6 +10,7 @@ class CharacterService {
             const characters = await this.characterRepository.getAllYourCharacters(user_id);
             return { data: characters, status: 200};
         } catch (error) {
+            console.log(error)
             return { status: 500, message: "Erro interno do servidor" };
         }
     }
@@ -32,6 +33,7 @@ class CharacterService {
             await this.characterRepository.create(data);
             return { message: "Personagem criado com sucesso", status: 201 };
         } catch (error) {
+            console.log(error)
             return { status: 500, message: "Erro interno do servidor" };
         }
     }

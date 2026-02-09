@@ -10,6 +10,7 @@ class SavingThrowsService {
       const SavingThrowss = await this.SavingThrowsRepository.findAll();
       return { data: SavingThrowss, status: 200 };
     } catch (error) {
+      console.log(error)
       return { status: 500, message: "Erro interno do servidor" };
     }
   }
@@ -19,7 +20,7 @@ class SavingThrowsService {
       const SavingThrows = await this.SavingThrowsRepository.findById(id);
 
       if (SavingThrows.length === 0) {
-        return { status: 404, message: "Não foi possível encontrar os atributos." };
+        return { status: 404, message: "Não foi possível encontrar os salvaguardas." };
       }
 
       return { data: SavingThrows, status: 200 };

@@ -48,6 +48,7 @@ class AttributesService {
       await this.attributesRepository.update(id, data);
       return { status: 200, message: "Atributos atualizados com sucesso." };
     } catch (error) {
+      console.log(error)
       return { status: 500, message: "Erro interno do servidor" };
     }
   }

@@ -4,7 +4,7 @@ import dbConnection from "../config/db.js";
 
 export class CharacterRepository extends AbstractRepository<Character> {
   protected transformRowToEntity(row: any): Character {
-    return new Character(row.id, row.name, row.backstory, row.appearance, row.ideals, row.objectives, row.bonds, row.flaws, row.personalityTraits, row.raceId, row.classId, row.backgroundId, row.attributesId, row.skillsId, row.userId, row.playerName, row.level, row.proficiencyBonus, row.armorClass, row.initiative, row.speed, row.maxHp, row.currentHp, row.tempHp);
+    return new Character(row.id, row.name, row.backstory, row.appearance, row.ideals, row.objectives, row.bonds, row.flaws, row.personalityTraits, row.alignment, row.raceId, row.classId, row.backgroundId, row.attributesId, row.skillsId, row.userId, row.playerName, row.level, row.proficiencyBonus, row.armorClass, row.initiative, row.speed, row.maxHp, row.currentHp, row.tempHp);
   }
 
   constructor() {
@@ -12,7 +12,7 @@ export class CharacterRepository extends AbstractRepository<Character> {
   }
 
   async getAllYourCharacters(user_id: number): Promise<Character[]> {
-    const [rows] = await dbConnection.query("SELECT * FROM character WHERE user_id = ?", [user_id])
+    const [rows] = await dbConnection.query("SELECT * FROM characters WHERE user_id = ?", [user_id])
     return rows as Character[];
   }
 }

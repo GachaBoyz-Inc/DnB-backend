@@ -19,7 +19,7 @@ class ItemService {
       const item = await this.itemRepository.findById(id);
 
       if (item.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+        return { status: 404, message: "Item não encontrado" };
       }
 
       return { data: item, status: 200 };
@@ -31,8 +31,9 @@ class ItemService {
   async create(data: Item): Promise<ResponseUtil<null>> {
     try {
       await this.itemRepository.create(data);
-      return { status: 200, message: "Usuário criado com sucesso" };
+      return { status: 200, message: "Item criado com sucesso" };
     } catch (error) {
+      console.log(error)
       return { status: 500, message: "Erro interno do servidor" };
     }
   }
@@ -42,11 +43,11 @@ class ItemService {
       const item = await this.itemRepository.findById(id);
 
       if (item.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+        return { status: 404, message: "Item não encontrado" };
       }
 
       await this.itemRepository.update(id, data);
-      return { status: 200, message: "Usuário atualizado com sucesso" };
+      return { status: 200, message: "Item atualizado com sucesso" };
     } catch (error) {
       return { status: 500, message: "Erro interno do servidor" };
     }
@@ -57,11 +58,11 @@ class ItemService {
       const item = await this.itemRepository.findById(id);
 
       if (item.length === 0) {
-        return { status: 404, message: "Usuário não encontrado" };
+        return { status: 404, message: "Item não encontrado" };
       }
 
       await this.itemRepository.delete(id);
-      return { status: 200, message: "Usuário deletado com sucesso" };
+      return { status: 200, message: "Item deletado com sucesso" };
     } catch (error) {
       return { status: 500, message: "Erro interno do servidor" };
     }

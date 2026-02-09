@@ -9,6 +9,7 @@ import abilityRouter from "./router/AbilityRouter.js";
 import skillsRouter from "./router/SkillsRouter.js"
 import spellsRouter from "./router/SpellRouter.js"
 import itemsRouter from "./router/ItemRouter.js"
+import savingThrowsRouter from "./router/SavingThrowsRouter.js";
 import app from "./server/server.js";
 
 app.use("/users", userRouter);
@@ -22,6 +23,7 @@ app.use("/abilities", abilityRouter);
 app.use("/skills", skillsRouter)
 app.use("/spells", spellsRouter)
 app.use("/items", itemsRouter)
+app.use("/savingThrows", savingThrowsRouter)
 
 app.get('/', async (req, res) => {
   res.send('API is running');

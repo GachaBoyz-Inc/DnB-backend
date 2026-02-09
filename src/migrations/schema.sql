@@ -52,10 +52,11 @@ CREATE TABLE IF NOT EXISTS spell (
     id int not null  AUTO_INCREMENT,
     name VARCHAR(100) not null,
     description varchar(1000) not null,
-    componetTypes enum("Verbal", "Somatical", "Material"),
+    componentTypes enum("Verbal", "Somatical", "Material"),
     castingTime VARCHAR(60) not null,
+    castingDistance VARCHAR(40) not null,
+    spellRange VARCHAR(40) not null,
     duration VARCHAR(60) not null,
-    distance VARCHAR(50) not null,
     conjurationClass enum ("WIZARD", "FIGHTER", "ROGUE", "CLERIC", "RANGER", "BARD", "WARLOCK", "DRUID", "BARBARIAN", "PALADIN", "SORCERER", "MONK", "ARTIFICER"),
     spellType enum("EVOCATION", "CONJURATION", "DIVINATION", "ENCHANTMENT", "ILLUSION", "NECROMANCY", "TRANSMUTATION"),
     resistance VARCHAR(24) not null,
@@ -64,39 +65,8 @@ CREATE TABLE IF NOT EXISTS spell (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS characters (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id int NOT NULL,
-    skillsId int not null, 
-    attributesId int not null,
-    raceId int NOT NULL,
-    classId int NOT NULL,
-    name varchar(200) NOT NULL,
-    backstory varchar(2000) NOT NULL,
-    appearance varchar(500) NOT NULL,
-    ideals varchar(500) NOT NULL,
-    objectives varchar(500) NOT NULL,
-    bonds varchar(500) NOT NULL, 
-    flaws varchar(500) NOT NULL,
-    personalityTraits varchar(500) NOT NULL,
-    backgroundId int NOT NULL,
-    playerName varchar(100) NOT NULL,
-
-    proficiencyBonus int not null,
-    armorClass int not null,
-    initiative int not null,
-    speed int not null,
-    maxHp int not null,
-    currentHp int not null,
-    tempHp int not null,
-    notes TEXT, 
-    level int NOT NULL,
-
-    primary key (id)
-);
-
 CREATE TABLE IF NOT EXISTS skills (
-    id INT NOT NULL,  
+    id INT NOT NULL AUTO_INCREMENT,  
     acrobatics INT NOT NULL DEFAULT 0,
     arcana INT NOT NULL DEFAULT 0,
     athletics INT NOT NULL DEFAULT 0,
@@ -115,7 +85,6 @@ CREATE TABLE IF NOT EXISTS skills (
     sleightOfHand INT NOT NULL DEFAULT 0, 
     religion INT NOT NULL DEFAULT 0,
     survival INT NOT NULL DEFAULT 0,
-    characterId INT NOT NULL,
     
     PRIMARY KEY (id)
 );
@@ -142,6 +111,41 @@ CREATE TABLE IF NOT EXISTS savingThrows (
     charisma INT NOT NULL DEFAULT 0,
     
     PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS characters (
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    skillsId int not null, 
+    attributesId int not null,
+    savingThrowsId int not null,
+    raceId int NOT NULL,
+    classId int NOT NULL,
+    name varchar(200) NOT NULL,
+    backstory varchar(2000) NOT NULL,
+    appearance varchar(500) NOT NULL,
+    ideals varchar(500) NOT NULL,
+    objectives varchar(500) NOT NULL,
+    bonds varchar(500) NOT NULL, 
+    flaws varchar(500) NOT NULL,
+    personalityTraits varchar(500) NOT NULL,
+    backgroundId int NOT NULL,
+    playerName varchar(100) NOT NULL,
+    alignement varchar(60),
+
+    proficiencyBonus int not null,
+    armorClass int not null,
+    initiative int not null,
+    speed int not null,
+    maxHp int not null,
+    currentHp int not null,
+    tempHp int not null,
+    notes TEXT, 
+    level int NOT NULL,
+
+    userId int NOT NULL,
+
+    primary key (id)
 );
 
 CREATE TABLE IF NOT EXISTS item (
@@ -181,11 +185,10 @@ ALTER TABLE characters
   ADD CONSTRAINT fk_characters_skills
     FOREIGN KEY (skillsId) REFERENCES skills(id),
   ADD CONSTRAINT fk_characters_attributes
-    FOREIGN KEY (attributesId) REFERENCES attributes(id);
-
-ALTER TABLE skills
-  ADD CONSTRAINT fk_skills_character
-    FOREIGN KEY (characterId) REFERENCES characters(id);
+    FOREIGN KEY (attributesId) REFERENCES attributes(id),
+  ADD CONSTRAINT fk_characters_saving_throws
+    FOREIGN KEY (savingThrowsId) REFERENCES savingThrows(id);
+    
 
 ALTER TABLE character_items
   ADD CONSTRAINT fk_character_items_characterId_characters
