@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS race (
 CREATE TABLE IF NOT EXISTS background (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    description VARCHAR(100),
+    description VARCHAR(1000),
     skills VARCHAR(100),
     equipment VARCHAR(600),
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS ability (
     id int unique not null AUTO_INCREMENT,
     name VARCHAR(100) not null,
     description VARCHAR(100) not null,
-    type enum("Racial","Class Ability","Feat","Spell"),
+    type enum("Racial","Class Ability","Feat"),
 
     PRIMARY KEY (id)
 );
@@ -128,7 +128,6 @@ CREATE TABLE IF NOT EXISTS attributes (
     intelligence INT NOT NULL DEFAULT 0,
     wisdom INT NOT NULL DEFAULT 0,
     charisma INT NOT NULL DEFAULT 0,
-    constitution INT NOT NULL DEFAULT 0,
     
     PRIMARY KEY (id)
 );
@@ -141,7 +140,6 @@ CREATE TABLE IF NOT EXISTS savingThrows (
     intelligence INT NOT NULL DEFAULT 0,
     wisdom INT NOT NULL DEFAULT 0,
     charisma INT NOT NULL DEFAULT 0,
-    constitution INT NOT NULL DEFAULT 0,
     
     PRIMARY KEY (id)
 );
